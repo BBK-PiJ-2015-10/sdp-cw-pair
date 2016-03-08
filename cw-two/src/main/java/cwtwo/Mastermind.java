@@ -131,9 +131,13 @@ public class Mastermind extends MastermindAbstract  {
 						this.playAgain = true;
 						hasDecided = true;
 						System.out.println("Let's Play!");
+						this.secretCode = null;
+						this.feedback.clear();
+						this.guesses.clear();
 					} else if (flag.equals("N")) {
 						hasDecided = true;
 						System.out.println("Thanks for Playing!");
+						this.playAgain=false;
 					} else {
 						System.out.println("Whoops! Please input only Y or N!");
 						flag = scanner.next();
