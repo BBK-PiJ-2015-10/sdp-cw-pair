@@ -51,7 +51,7 @@ public class ColorBank {
     public  Colour getRight() { return rightOrAlmost.get("Right"); }
     public  Colour getAlmost() { return rightOrAlmost.get("Almost"); }
     
-    public  int numColors(){ return colorBank.size()-1; }
+    public  int numColors(){ return colorBank.size(); }
 
 
 
