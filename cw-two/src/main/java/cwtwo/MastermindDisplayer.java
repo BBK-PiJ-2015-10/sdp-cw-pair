@@ -4,9 +4,11 @@ import com.google.inject.Inject;
 
 import java.util.List;
 
+
+
 public class MastermindDisplayer implements Displayer {
 
-
+	protected Boolean showcode;
 
 	protected Code secretcode;
 	
@@ -37,9 +39,12 @@ public class MastermindDisplayer implements Displayer {
 		//Need to figure out how to leverage the showCode boolean to determine if this first display should be done or
 		//not, maybe wrap it in an if statement.
 		
-		System.out.print("The secret code is: ");
-		displayCode(secretcode);
-		System.out.println();
+		if (showcode) {
+			System.out.print("The secret code is: ");
+			displayCode(secretcode);
+			System.out.println();
+		}
+		
 		for (int i=0;i<guesses.size();i++)
 		{
 			displayCode(guesses.get(i));
@@ -60,5 +65,10 @@ public class MastermindDisplayer implements Displayer {
 	public void setFeedback(List<Code> feedback) {
 		this.feedback = feedback;
 	}
+	
+	public void setShowcode(Boolean showcode) {
+		this.showcode = showcode;
+	}
+	
 
 }

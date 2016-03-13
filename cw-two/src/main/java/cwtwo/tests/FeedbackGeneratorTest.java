@@ -17,10 +17,8 @@ import cwtwo.Code;
 import cwtwo.CodeComparator;
 import cwtwo.CodeConcrete;
 import cwtwo.CodeGenerator;
-import cwtwo.SecretCodeGenerator;
 import cwtwo.FeedbackGenerator;
 import cwtwo.ColorBank;
-import cwtwo.GuessGenerator;
 import cwtwo.MastermindModule;
 import cwtwo.colors.Black;
 import cwtwo.colors.Blue;
@@ -67,7 +65,6 @@ Injector injector = Guice.createInjector(new MastermindModule());
 		
 		Integer pegs = 4;
 		
-		private CodeConcrete codeConcrete1 = new CodeConcrete();
 		
 		private Code createCodeConcreteAllBlue () {
 			CodeConcrete result = new CodeConcrete();
@@ -84,15 +81,6 @@ Injector injector = Guice.createInjector(new MastermindModule());
 			result.addPeg(colorBank.getColourByKey('Y'));
 			result.addPeg(colorBank.getColourByKey('Y'));
 			result.addPeg(colorBank.getColourByKey('Y'));
-			return result;
-		}
-		
-		private Code createCodeConcreteAllGreen () {
-			Code result = new CodeConcrete();
-			result.addPeg(colorBank.getColourByKey('G'));
-			result.addPeg(colorBank.getColourByKey('G'));
-			result.addPeg(colorBank.getColourByKey('G'));
-			result.addPeg(colorBank.getColourByKey('G'));
 			return result;
 		}
 		
@@ -288,17 +276,7 @@ Injector injector = Guice.createInjector(new MastermindModule());
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	/**
-	*  Below are the tests related to the useCodes() method.
-	*/
-	
-	
-	/** 
-	* Te
-	*/	
-	
-	
-	
+		
 	
 
 }

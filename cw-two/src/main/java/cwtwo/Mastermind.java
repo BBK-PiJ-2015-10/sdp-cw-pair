@@ -65,6 +65,7 @@ public class Mastermind extends MastermindAbstract  {
 						//Show secret code
 					if (flag.equals("Y")) {
 						this.showCode = true;
+						displayer.setShowcode(true);
 						hasSetShowCode = true;
 						System.out.println("The secret code is: ");
 						displayer.displayCode(this.secretCode);
@@ -73,6 +74,7 @@ public class Mastermind extends MastermindAbstract  {
 						//Don't show secret code
 					} else if (flag.equals("N")) {
 						hasSetShowCode = true;
+						displayer.setShowcode(false);
 
 						//Wrong input
 					} else {
@@ -80,6 +82,7 @@ public class Mastermind extends MastermindAbstract  {
 						flag = scanner.next();
 					}
 				}
+				
 
 				//Begin Gameplay, Loop through the set number of turns
 
@@ -134,6 +137,7 @@ public class Mastermind extends MastermindAbstract  {
 						this.secretCode = null;
 						this.feedback.clear();
 						this.guesses.clear();
+						displayer.setShowcode(null);
 					} else if (flag.equals("N")) {
 						hasDecided = true;
 						System.out.println("Thanks for Playing!");
