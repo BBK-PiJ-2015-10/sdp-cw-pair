@@ -3,11 +3,11 @@ package cwtwo;
 import java.util.Scanner;
 
 /**
- * Created by elianne on 21/02/2016.
+ * 
  */
 public class GuessGenerator implements  CodeGenerator {
 
-	private Boolean hasValidColors(String input, ColorBank colorBank){
+	public Boolean hasValidColors(String input, ColorBank colorBank){
 		for (int i=0; i< input.length();i++){
 			if ( colorBank.getColourByKey(input.charAt(i)) == null) {
 				return false;
