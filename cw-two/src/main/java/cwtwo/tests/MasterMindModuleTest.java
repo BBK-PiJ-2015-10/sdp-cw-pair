@@ -24,7 +24,7 @@ import cwtwo.Turns;
 import cwtwo.Pegs;
 
 
-public class MasterMindModuleTest {
+public class MastermindModuleTest {
 	
 	
 	Injector injector = Guice.createInjector(new MastermindModule());

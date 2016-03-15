@@ -5,7 +5,6 @@ public class Settings extends GameSettingsAbstract {
 	
 	private Settings(){
 		
-
 		this.numPegs = 4;
 		this.numTurns = 12;
 		

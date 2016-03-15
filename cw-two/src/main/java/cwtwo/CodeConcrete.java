@@ -15,23 +15,8 @@ public class CodeConcrete implements Code {
 
 	@Override
 	public List<Colour> getCode() {
-		// TODO Auto-generated method stub
 		return this.code;
 	}
 
-	@Override
-	public void setCode(List<Colour> code) {
-		// TODO Auto-generated method stub
-		this.code = code;
-	}
-
-	@Override
-	public void print(String format) {
-		if(format=="word"){
-			
-		} else if (format=="letter") {
-			
-		}
-	}
 
 }

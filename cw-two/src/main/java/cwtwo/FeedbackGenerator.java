@@ -41,8 +41,5 @@ public class FeedbackGenerator implements CodeComparator {
 	public void useCodes(Code secretcode, Code guesscode) {
 		this.secretcode=secretcode;
 		this.guesscode=guesscode;
-		
-		// TODO Auto-generated method stub
-		
 	}
 }

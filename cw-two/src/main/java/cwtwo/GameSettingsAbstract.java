@@ -5,8 +5,11 @@ import java.util.List;
 public abstract class GameSettingsAbstract {
 	
 	List<Color> colours;
+	
 	List<Color> pegColours;
+	
 	int numPegs;
+	
 	int numTurns;
 	
 	public List<Color> getColours(){

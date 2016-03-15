@@ -7,11 +7,6 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-
 import cwtwo.MastermindDisplayer;
 import cwtwo.Displayer;
 import cwtwo.Code;
@@ -31,31 +26,12 @@ import org.junit.After;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.List;
-
-
 
 
 public class MastermindDisplayerTest {
 	
-	private Boolean showcode;
-
-	private Code secretcode = new CodeConcrete();
-	
-	private List<Code> guesses = new ArrayList<>();
-	
-	private List<Code> feedback = new ArrayList<>();
-	
 	private Displayer displayer = new MastermindDisplayer();
-	
-	private Code guess1 = new CodeConcrete();
-	
-	private Code guess2 = new CodeConcrete();
-	
-	private Code feedback1 = new CodeConcrete();
-	
-	private Code feedback2 = new CodeConcrete();
-	
+
 	private Colour black = Black.getInstance();
 	private Colour blue = Blue.getInstance();
 	private Colour green = Green.getInstance();
@@ -83,6 +59,29 @@ public class MastermindDisplayerTest {
 		return result;
 	}
 	
+	public Code createManualFeedback1(){
+		Code result = new CodeConcrete();
+		result.addPeg(white);
+		result.addPeg(black);
+		result.addPeg(black);
+		result.addPeg(black);
+		return result;
+	}
+	
+	public Code createManualFeedback2(){
+		Code result = new CodeConcrete();
+		result.addPeg(white);
+		result.addPeg(black);
+		result.addPeg(white);
+		return result;
+	}
+	
+	
+	public Code createManualFeedback3(){
+		Code result = new CodeConcrete();
+		return result;
+	}
+	
 	
 	
 
@@ -102,20 +101,21 @@ public class MastermindDisplayerTest {
 	    System.setErr(null);
 	}	
 	
-	/*
-	@Test
-	public void out() {
-		System.out.print("hello");
-		assertEquals("hello", outContent.toString());
-	}
+
 	
-	*/
+	
+	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	*  Below are the tests related to the displayCode() method.
+	*/	
 	
 	/** 
 	* Passing a predefined CODE instance to the display method. Testing that the
 	* output should match BGRO, since the colors in the Code are Blue, Green, Red,
 	* Orange.
-	*/ 
+	*/
 	@Test
 	public void testDisplayCodeI() {
 		displayer.displayCode(createManualCode1());
@@ -136,56 +136,58 @@ public class MastermindDisplayerTest {
 	* Passing a predefined CODE instance to the display method. Testing that the
 	* output should match PGPO, since the colors in the Code are Purple, Green, Purple,
 	* Orange.
-	*/ 
+	*/
 	@Test
 	public void testDisplayCodeII() {
 		displayer.displayCode(createManualCode2());
 		assertEquals("PGPO", outContent.toString());
 	}
 	
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	*  Below are the tests related to the displayFeedbackCode() method.
+	*/		
 	
 	
-	
-	
-	
-	
-	
-	
-	/*
+	/** 
+	* Passing a predefined Feedback CODE instance to the displayFeedbackCode method. Testing that the
+	* output should match White Black Black Black , since the colors in the Code WBBB.
+	*/
 	@Test
-	public void practice() {
-		showcode = true;
-		secretcode.addPeg(blue);
-		secretcode.addPeg(green);
-		secretcode.addPeg(red);
-		secretcode.addPeg(orange);
-		
-		guess1.addPeg(orange); 
-		guess1.addPeg(red); 
-		guess1.addPeg(green); 
-		guess1.addPeg(green); 
-		
-		feedback1.addPeg(white);
-		feedback1.addPeg(white);
-		feedback1.addPeg(white);
-		feedback1.addPeg(white);
-		
-		guesses.add(guess1);
-		feedback.add(feedback1);
-		
-		displayer.setShowcode(showcode);
-		displayer.setSecretcode(secretcode);
-		displayer.setFeedback(feedback);
-		displayer.setGuesses(guesses);
-		
-		//displayer.displayCode(secretcode);
-		
-		displayer.displayGame();
-		
-		assertEquals(1,1);
+	public void testDisplayFeedbackCodeI() {
+		((MastermindDisplayer)displayer).displayFeedbackCode(createManualFeedback1());
+		assertEquals("White Black Black Black ", outContent.toString());
 	}
 	
+	/** 
+	* Passing a predefined Feedback CODE instance to the displayFeedbackCode method. Testing that the
+	* output should match White Black White , since the colors in the Code WBW.
 	*/
+	@Test
+	public void testDisplayFeedbackCodeII() {
+		((MastermindDisplayer)displayer).displayFeedbackCode(createManualFeedback2());
+		assertEquals("White Black White ", outContent.toString());
+	}
+	
+	/** 
+	* Passing a predefined Feedback CODE instance to the displayFeedbackCode method. Testing that the
+	* output should match No Pegs, since the code is empty.
+	*/
+	@Test
+	public void testDisplayFeedbackCodeIII() {
+		((MastermindDisplayer)displayer).displayFeedbackCode(createManualFeedback3());
+		assertEquals("No Pegs", outContent.toString());
+	}
+	
+	
+	
+	
+	
+	
+	
+
 
 
 }

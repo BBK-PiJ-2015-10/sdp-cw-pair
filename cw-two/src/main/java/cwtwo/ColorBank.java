@@ -11,9 +11,13 @@ import java.util.List;
 public class ColorBank {
 
     private  Hashtable<Character, Colour> colorBank = new Hashtable<>();
+    
     private  Hashtable<String,Colour> rightOrAlmost = new Hashtable<>();
+    
     private  List<Colour> colours;
+    
     private  Colour[] rightWrong;
+    
 
     @Inject
     public ColorBank(List<Colour> colours, Colour[] rightOrAlmost) {

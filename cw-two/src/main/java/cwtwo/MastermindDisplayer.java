@@ -1,9 +1,7 @@
 package cwtwo;
 
-import com.google.inject.Inject;
 
 import java.util.List;
-
 
 
 public class MastermindDisplayer implements Displayer {
@@ -36,8 +34,6 @@ public class MastermindDisplayer implements Displayer {
 
 	@Override
 	public void displayGame() {
-		//Need to figure out how to leverage the showCode boolean to determine if this first display should be done or
-		//not, maybe wrap it in an if statement.
 		
 		if (showcode) {
 			System.out.print("The secret code is: ");
