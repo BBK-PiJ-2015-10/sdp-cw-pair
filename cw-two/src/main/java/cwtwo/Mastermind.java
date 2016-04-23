@@ -7,10 +7,11 @@ import java.util.List;
 import java.util.Scanner;
 
 
+/**
+ * An extension of the MastermindAbstract.
+ */
 public class Mastermind extends MastermindAbstract  {
 
-//	@Inject
-//	ColorBank colorBank;
 
 	@Inject
 	public Mastermind(Greeter greeter,
@@ -30,6 +31,9 @@ public class Mastermind extends MastermindAbstract  {
 		this.playAgain=false;
 	}
 
+	/**
+	 * Implementation of method from abstract class.
+	 */
 	@Override
 	public void runGames() {
 
@@ -153,6 +157,10 @@ public class Mastermind extends MastermindAbstract  {
 	}
 
 
+	/**
+	 * Provides feedback if the player has won or not.
+	 * @return a boolean with the winning outcome of the player.
+	 */
 	public boolean hasWon(){
 
 		List<Colour> latestFeedback = this.feedback.get( this.feedback.size()-1 ).getCode();

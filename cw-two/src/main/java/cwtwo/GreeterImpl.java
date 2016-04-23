@@ -4,11 +4,19 @@ import cwtwo.colors.Colour;
 
 import java.util.List;
 
+/**
+ * A print screen implementation of the Greeter interface.
+ */
 public class GreeterImpl implements Greeter {
 
 	
 	private String greeting;
 	
+	/**
+	 * Implementation of method based on interface.
+	 * @see Greeter. 
+	 */
+	@Override
 	public void settings(int numPegs, List<Colour> colors, int turns){
 
 		String colorNames = "";
@@ -31,6 +39,10 @@ public class GreeterImpl implements Greeter {
 					+ "\nYou have " + turns + " turns to guess the answer or you lose the game. Good Luck!";
 	}
 	
+	/**
+	 * Implementation of method based on interface.
+	 * @see Greeter. 
+	 */
 	@Override
 	public void greet() {
 		System.out.println(greeting);

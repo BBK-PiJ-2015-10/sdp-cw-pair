@@ -37,8 +37,6 @@ public class SecretCodeGeneratorTest {
 	
 	private CodeGenerator secretGenerator = injector.getInstance(Key.get(CodeGenerator.class,CodeGenerator.Secret.class));
 	
-	// ? How can I get an instance of ColorBank instead of manually creating as below.
-	
 	private List<Colour> colorList = Arrays.asList(
 			Blue.getInstance(),
 			Red.getInstance(),

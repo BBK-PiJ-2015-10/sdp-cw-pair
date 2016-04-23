@@ -1,17 +1,21 @@
 package cwtwo;
 
-/**
- * Created by elianne on 21/02/2016.
- */
-
 import java.util.Collections;
 
+
+/**
+ * An implementation of code comparator.
+ */
 public class FeedbackGenerator implements CodeComparator {
 
 	private Code guesscode; 
 	
 	private Code secretcode;
 
+	/**
+	* Implementation of method from interface.
+	* @see CodeGenerator.
+	*/
     @Override
     public Code generateCode(ColorBank colorBank, Integer pegs) {
         
@@ -37,6 +41,10 @@ public class FeedbackGenerator implements CodeComparator {
     	
     }
 
+	/**
+	* Implementation of method from interface.
+	* @see CodeComparator.
+	*/   
 	@Override
 	public void useCodes(Code secretcode, Code guesscode) {
 		this.secretcode=secretcode;

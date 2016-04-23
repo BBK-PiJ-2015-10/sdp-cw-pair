@@ -3,10 +3,17 @@ package cwtwo;
 import java.util.Scanner;
 
 /**
- * 
+ * An implementation of code generator that generates a code based on an input guess
+ * from the player of the game.
  */
 public class GuessGenerator implements  CodeGenerator {
 
+	/**
+	 * Provides a feedback if an input string is associated with a colorbank or not.
+	 * @param input . An input string.
+	 * @param colorBank . A colorbank of colors.
+	 * @return a boolean confirming if the string is associated with any colors.
+	 */
 	public Boolean hasValidColors(String input, ColorBank colorBank){
 		for (int i=0; i< input.length();i++){
 			if ( colorBank.getColourByKey(input.charAt(i)) == null) {
@@ -17,6 +24,10 @@ public class GuessGenerator implements  CodeGenerator {
 	}
 	
 
+	/**
+	 * Implementation of method from interface based on an input guess
+	 * from the player.
+	 */
     @Override
     public Code generateCode(ColorBank colorBank,Integer pegs) {
         

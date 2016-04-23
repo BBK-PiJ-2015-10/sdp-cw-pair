@@ -5,6 +5,9 @@ import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An abstract class implementing a Mastermind Game.
+ */
 public abstract class MastermindAbstract implements Game {
 	
 	protected boolean showCode;
@@ -33,6 +36,9 @@ public abstract class MastermindAbstract implements Game {
 	
 	protected Greeter greeter;
 	
+	/**
+	 * Executes the game.
+	 */
 	abstract public void runGames();
 
 

@@ -7,6 +7,10 @@ import cwtwo.colors.*;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * A class that handles all the binding for the automatic dependency 
+ * injections in the mastermind program.
+ */
 public class MastermindModule extends AbstractModule {
 
 	@Override

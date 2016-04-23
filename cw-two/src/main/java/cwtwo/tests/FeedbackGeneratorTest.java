@@ -36,16 +36,12 @@ Injector injector = Guice.createInjector(new MastermindModule());
 		
 	private CodeGenerator secretGenerator = injector.getInstance(Key.get(CodeGenerator.class,CodeGenerator.Secret.class));
 	
-	//? Not sure why, i wouldn't let me make the below class to be FeedbackGenerator.
-	
 	private CodeGenerator feedbackGenerator = injector.getInstance(Key.get(CodeComparator.class,CodeGenerator.Feedback.class));
 	
 	private Colour black = Black.getInstance();
 	
 	private Colour white = White.getInstance();
 	
-
-	// ? How can I get an instance of ColorBank instead of manually creating as below.
 	
 		private List<Colour> colorList = Arrays.asList(
 				Blue.getInstance(),
